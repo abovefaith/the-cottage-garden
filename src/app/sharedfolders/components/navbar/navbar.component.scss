@@ -1,0 +1,55 @@
+// toolbar angular nav
+// .mat-toolbar{
+//   background-color: cornflowerblue;
+//   color: white;
+// }
+// .mat-button{
+//    color: white;
+// }
+// .spacer{
+//   flex: 1 1 auto;
+// }
+
+
+*
+{
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+//bootstrap nav
+.active-link{
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link.active-link{
+  color: var(--secondary-color);
+  }
+
+.navbar-nav .nav-link.active-link
+{
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+  img {
+    width: 850px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+.navbar-brand
+{
+  max-width: 100%;
+}
+
+// nav
+// {
+//  height: 30%;
+// }
+
+a
+{
+  font-size: 20px;
+}

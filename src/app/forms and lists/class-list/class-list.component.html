@@ -1,0 +1,161 @@
+<!-- <p>class-list works!</p> -->
+
+<div class="banner mt-5 mb-3">
+  <div class="content text-center">
+    <div class="intro  ">
+      <h1>Class List • 2023-24</h1>
+      <div class="btn mt-3">
+        <a href="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/64f8dc4bf524d31c15369155/1694030923568/23-24Class%2BList.pdf" class="learnbtn" target="_blank">DOWNLOAD <i class="bi bi-download"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container  mb-5">
+  <mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Reese Mayzelle
+        </mat-panel-title>
+        <mat-panel-description>
+          -Mouse
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday: 5/15/20</mat-list-item>
+        <mat-list-item role="listitem">1050 Bay Rd., Amherst, MA 01002</mat-list-item>
+        <mat-list-item role="listitem">Leila Tunnell // Ltunnell18@gmail.com // 404-316-6900</mat-list-item>
+        <mat-list-item role="listitem">Jake Mazar // Jake.mazar@gmail.com // 508-446-2935</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Margot Chernock Goldberg
+        </mat-panel-title>
+        <mat-panel-description>
+          -Chipmunk
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday: 6/2/2021</mat-list-item>
+        <mat-list-item role="listitem">30 Dana Place, Amherst, MA 01002</mat-list-item>
+        <mat-list-item role="listitem">Larissa Chernock // Larissa.chernock@gmail.com // 617-501-4538</mat-list-item>
+        <mat-list-item role="listitem">Matthew Goldberg // Matthew.goldberg@gmail.com // 520-405-5552</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Conrad Hipps
+        </mat-panel-title>
+        <mat-panel-description>
+          -Rooster
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday: 3/13/2022</mat-list-item>
+        <mat-list-item role="listitem">15 Terry Lane, Belchertown, MA 01007</mat-list-item>
+        <mat-list-item role="listitem">Rebecca Hipps // rhipps@thewaldorfcoach.com // 480-329-8230</mat-list-item>
+        <mat-list-item role="listitem">Zachary Hipps // zhipps@gmail.com // 480-243-0102</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Rene Asher
+        </mat-panel-title>
+        <mat-panel-description>
+          -Bunny
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday: 5/6/22</mat-list-item>
+        <mat-list-item role="listitem">4 Stagecoach Rd., Amherst, MA 01002</mat-list-item>
+        <mat-list-item role="listitem">Zoe Abram // zoe.abram@gmail.com // 413-588-1326</mat-list-item>
+        <mat-list-item role="listitem">William Van Heuvelen // vanheuvelen.will@gmail.com // 701-426-9563</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Georgina Closs Kim (GiGi)
+        </mat-panel-title>
+        <mat-panel-description>
+          -Lamb
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday: 7/5/22</mat-list-item>
+        <mat-list-item role="listitem">133 Flat Hills Rd., Amherst, MA 01002</mat-list-item>
+        <mat-list-item role="listitem">Virginia (Ginna) Closs // 650-492-0862 // closs@umass.edu</mat-list-item>
+        <mat-list-item role="listitem">Albert (Bert) Kim // 206-949-6124 // Akim04@smith.edu</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Henry Mahoney
+        </mat-panel-title>
+        <mat-panel-description>
+          -Kitty
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem">Birthday:  9/22/2022</mat-list-item>
+        <mat-list-item role="listitem">4 Chesnut Hill Rd., Leverett, MA 01054</mat-list-item>
+        <mat-list-item role="listitem">Anna Bingham // annadeborah.bingham@gmail.com // 508-988-5210 cell</mat-list-item>
+        <mat-list-item role="listitem">Sean Mahoney // Mahoneyspa@gmail.com // 978-397-8091 cell</mat-list-item>
+      </mat-list>
+
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+</div>

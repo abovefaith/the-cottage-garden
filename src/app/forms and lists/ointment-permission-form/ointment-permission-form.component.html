@@ -1,0 +1,167 @@
+<!-- <p>ointment-permission-form works!</p> -->
+
+<div class="container heading mt-5 mb-5 text-center">
+  <h1>Ointment Permission</h1>
+  <span class="btn mb-3">
+    <a href ="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/637786705eb02b06869a3480/1668777595969/5Permission+Slip+Ointments.docx-2.pdf" attributes-list target="_blank">Download the PDF version here!<i class="bi bi-arrow-right"></i></a>
+  </span>
+  <p>
+    Permission Slip for use of the products listed below.
+    <br>
+    PLEASE CHECK THE ITEMS WE MAY USE.
+  </p>
+</div>
+
+<div class="container mb-5">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form">
+    <div class="row">
+      <h2>Child's Name (required)</h2>
+      <div class="col form-group">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName1'].errors }" type="text" class="form-control" placeholder="First name">
+
+        <div *ngIf="submitted && submitForm.controls['fName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName1'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+
+      </div>
+      <div class="col form-group">
+        <label for="inputAddress">Last Name</label>
+        <input formControlName="lName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName1'].errors }" type="text" class="form-control" placeholder="Last name">
+
+        <div *ngIf="submitted && submitForm.controls['lName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName1'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+      <div></div>
+
+      <div class="form-group  mb-3 col-sm-6">
+        <label for="inputAddress">Date(required)</label>
+        <input formControlName="date" [ngClass]="{'is-invalid':submitted && submitForm.controls['date'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date">
+        <div *ngIf="submitted && submitForm.controls['date'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['date'].errors['required']" >
+            The date is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+
+        <!-- <h2>Child Lives With... (required)</h2> -->
+        <p>I Give Permission For The Staff Of The Cottage Garden Program To Use These Topical Ointments On My Child
+          (required)</p>
+
+        <div *ngIf="submitted && submitForm.controls['lives'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lives'].errors['required']" >
+            I Give Permission For The Staff Of The Cottage Garden Program To Use These Topical Ointments On My Child is required.
+          </div>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">I Do Give Permission</label>
+        </div>
+
+        <p>Weleda Products</p>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Calendula Cream - for rashes and minor skin irritations</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Wound Care - for cuts and abrasions</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Arnica Ointment - for sprains and bruises</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Burn Care - for burns and insect bites</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Diaper Cream - for rashes and protection</label>
+        </div>
+
+        <p>Dr. Hauschka Products</p>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Silk Powder</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Hand Cream</label>
+        </div>
+
+        <div class="form-check mb-3">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Lavender Oil</label>
+        </div>
+
+        <p>Uriel Products</p>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Arnica nettle gel and/or spray for bug bites</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Lavender Oil</label>
+        </div>
+
+        <p>Bug Repellent</p>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Burt’s Bees</label>
+        </div>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Badger Bug Spray</label>
+        </div>
+
+        <p>Sunscreen</p>
+
+        <div class="form-check">
+          <input formControlName="lives" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+          <label class="form-check-label" for="flexCheckChecked">Badger 30+SPF organic, natural sunscreen</label>
+        </div>
+
+      </div>
+
+      <div class="form-group mt-3 mb-3">
+        <label for="inputAddress">Parent Signature (required)</label>
+        <input formControlName="gender" [ngClass]="{'is-invalid':submitted && submitForm.controls['gender'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Gender">
+        <div *ngIf="submitted && submitForm.controls['gender'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['gender'].errors['required']" >
+            Parent Signature is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-lg-12  mb-3">
+        <button class="submitbtn ">Submit</button>
+      </div>
+
+
+
+
+
+    </div>
+
+  </form>
+</div>

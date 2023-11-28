@@ -1,0 +1,111 @@
+<!-- <p>oral-opt-out-form works!</p> -->
+
+<div class="container heading mt-5 mb-3 text-center">
+  <h1>Oral Opt-Out Form</h1>
+  <span class="btn mb-3">
+    <a href ="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/6358a0c7d89bad67e7cd6a35/1666752712547/7Oral+single.docx.pdf" attributes-list target="_blank">Download the PDF version here!<i class="bi bi-arrow-right"></i></a>
+  </span>
+</div>
+
+<div class="container">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form" >
+    <div class="mb-5">
+      <p>Dear Physician,</p>
+      <p>
+        In January 2010, EEC issued new regulations for child care programs that include a requirement that educators assist children with brushing their teeth if children are in care for more than four hours or if children have a meal while in care [606 CMR 7.11(11)(d)].
+      </p>
+      <p>This regulation is intended to:</p>
+      <ul>
+        <li>Help children learn about the importance of good oral health </li>
+        <li>Provide information and resources regarding good oral health to child care programs and families </li>
+        <li>Help address the high incidence of tooth decay among young children in Massachusetts, which is associated with numerous health risks. </li>
+      </ul>
+      <p>EEC licensed programs must comply with this regulation.</p>
+      <p>However, parents may choose that their child (ren) not participate in tooth brushing while present at the child care program.</p>
+      <p>You do not need to fill out this form to have your child(ren) participate in tooth brushing while they are in child care.</p>
+      <p> However, if you do not want your child to brush his or her teeth while s/he is attending the child care program, please fill out the information found below.</p>
+      <p>A separate form must be filled out for each child in care.</p>
+      <p>This form must be renewed annually and will be kept in your child’s record at the program.</p>
+      <p>Should you change your mind and wish for your child to participate in tooth brushing, this form may be withdrawn at any time by requesting in writing that it be removed from your child’s file.</p>
+      <p>Thank you.</p>
+      <hr>
+      <p>I do not wish to have my child participate in tooth brushing while in care at <em>THE COTTAGE GARDEN</em></p>
+    </div>
+
+    <div class="row">
+      <h2>Child's Name (required)</h2>
+      <div class="col form-group">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName1'].errors }" type="text" class="form-control" placeholder="First name">
+
+        <div *ngIf="submitted && submitForm.controls['fName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName1'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+      </div>
+      <div class="col form-group">
+        <label for="inputAddress">Last Name</label>
+        <input formControlName="lName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName1'].errors }" type="text" class="form-control" placeholder="Last name">
+
+        <div *ngIf="submitted && submitForm.controls['lName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName1'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <h2><strong>Parent's/Guardian's Name (required)</strong></h2>
+        <div class="col">
+          <label for="inputAddress">First Name</label>
+          <input formControlName="fName3" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName3'].errors }" type="text" class="form-control" placeholder="First name">
+          <div *ngIf="submitted && submitForm.controls['fName3'].errors" class="text-danger">
+            <div *ngIf="submitted && submitForm.controls['fName3'].errors['required']" >
+              First Name is required
+            </div>
+          </div>
+        </div>
+        <div class="col mb-3">
+          <label for="inputAddress">Last Name</label>
+          <input  formControlName="lName3" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName3'].errors }" type="text" class="form-control" placeholder="Last name">
+          <div *ngIf="submitted && submitForm.controls['lName3'].errors" class="text-danger">
+            <div *ngIf="submitted && submitForm.controls['lName3'].errors['required']" >
+              Last Name is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mt-3 mb-3">
+          <label for="inputAddress">Parent Signature (required)</label>
+          <input formControlName="gender" [ngClass]="{'is-invalid':submitted && submitForm.controls['gender'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Gender">
+          <div *ngIf="submitted && submitForm.controls['gender'].errors" class="text-danger">
+            <div *ngIf="submitted && submitForm.controls['gender'].errors['required']" >
+              Parent Signature is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group  mb-3 col-sm-6">
+          <label for="inputAddress">Date(required)</label>
+          <input formControlName="date" [ngClass]="{'is-invalid':submitted && submitForm.controls['date'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date">
+          <div *ngIf="submitted && submitForm.controls['date'].errors" class="text-danger">
+            <div *ngIf="submitted && submitForm.controls['date'].errors['required']" >
+              The date is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12  mb-3">
+          <button class="submitbtn ">Submit</button>
+        </div>
+        <p>If you have any questions or concerns, <a [routerLink]="['/contact']" > click here.</a></p>
+
+    </div>
+
+
+
+
+  </form>
+</div>

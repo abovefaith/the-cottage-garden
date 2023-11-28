@@ -1,0 +1,145 @@
+<!-- <p>tuition-form works!</p> -->
+
+
+<div class="container heading mt-5 mb-3 text-center">
+  <h1>Tuition</h1>
+  <!-- <span class="btn mb-3">
+    <a href ="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/6358a774a6daf02140e8733f/1666754425721/Family+Info+.docx.pdf" attributes-list target="_blank">Download the PDF version here!<i class="bi bi-arrow-right"></i></a>
+  </span> -->
+  <h2>September 5, 2023-June 12, 2024</h2>
+</div>
+
+
+
+<div class="container mb-5">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form" >
+
+    <p><strong>Monday, Tuesday, Wednesday & Thursday:</strong></p>
+    <p>8:00am-4:00pm OR 8-12:30 with lunch.</p>
+
+    <p><strong>Monday, Tuesday, Wednesday:</strong></p>
+    <p>8:00am-4:00pm OR 8-12:30 with lunch.</p>
+
+    <p>Tuition is on a sliding scale and the honor system is in place.</p>
+
+    <p><strong>Supply Fees:</strong></p>
+    <p>4 Days….$500.00</p>
+    <p>3 Days…$400. 00</p>
+
+
+
+    <div class="row mb-3">
+      <h2>Child's Name (required)</h2>
+      <div class="col form-group">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName1'].errors }" type="text" class="form-control" placeholder="First name">
+
+        <div *ngIf="submitted && submitForm.controls['fName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName1'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col form-group">
+        <label for="inputAddress">Last Name</label>
+        <input formControlName="lName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName1'].errors }" type="text" class="form-control" placeholder="Last name">
+
+        <div *ngIf="submitted && submitForm.controls['lName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName1'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+      <p>(required)</p>
+
+      <div *ngIf="submitted && submitForm.controls['lives2'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['lives2'].errors['required']" >
+          is required.
+        </div>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">Four Full Days, Mon.-Thurs.…………………………………….…….$22,500.00 - $19,700.00</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">Three Full Days, Mon., Tues. & Wed………………………………….$19,065.00 - $16,000.00</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">Four Half Days, Mon.-Thurs.………………………………….………$16,875.00 - $14,760.00</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">Three Half days, Mon., Tues. & Wed. ………………………………..$14,300.00 -$12,000.00</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">I give The Cottage Garden permission to take walks off the property with my child/children.</label>
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="inputAddress">My chosen tuition rate is: (required)</label>
+      <!-- <p>Parent 2 Signature: (required)</p> -->
+      <input formControlName="rate" [ngClass]="{'is-invalid':submitted && submitForm.controls['rate'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['rate'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['rate'].errors['required']" >
+          My chosen tuition rate is: is required.             </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="inputAddress">Parent 1 Signature: (required)</label>
+      <!-- <p>Parent 1 Signature: (required)</p> -->
+      <input formControlName="p1sign" [ngClass]="{'is-invalid':submitted && submitForm.controls['p1sign'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['p1sign'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p1sign'].errors['required']" >
+          Parent 1 Signature: (required)              </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="inputAddress">Parent 2 Signature: (required)</label>
+      <!-- <p>Parent 2 Signature: (required)</p> -->
+      <input formControlName="p2sign" [ngClass]="{'is-invalid':submitted && submitForm.controls['p2sign'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['p2sign'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p2sign'].errors['required']" >
+          Parent 2 Signature: (required)              </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3 col-sm-4">
+      <label for="inputAddress">Date (required)</label>
+      <!-- <p>Date (required)</p> -->
+      <input formControlName="p2Date" [ngClass]="{'is-invalid':submitted && submitForm.controls['p2Date'].errors }"  type="date" class="form-control" id="inputAddress" placeholder="" >
+      <div *ngIf="submitted && submitForm.controls['p2Date'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p2Date'].errors['required']" >
+          Date (required)              </div>
+      </div>
+    </div>
+
+    <div class="form-group col-lg-12  mb-3">
+      <button class="submitbtn ">Submit</button>
+    </div>
+
+
+
+
+
+  </form>
+</div>
+
+
+

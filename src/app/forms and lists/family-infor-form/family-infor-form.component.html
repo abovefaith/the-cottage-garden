@@ -1,0 +1,872 @@
+<!-- <p>family-infor-form works!</p> -->
+
+<div class="container heading mt-5 mb-3 text-center">
+
+  <h1>Family Information Form</h1>
+  <span class="btn mb-3">
+    <a href ="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/6358a774a6daf02140e8733f/1666754425721/Family+Info+.docx.pdf" attributes-list target="_blank">Download the PDF version here!<i class="bi bi-arrow-right"></i></a>
+  </span>
+</div>
+
+<div class="container mb-5">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form">
+
+    <div class="mb-3">
+      <p>Dear Parents,</p>
+      <p>
+        We know that some of you have filled this form out before so just add what you think is necessary.
+        <br>
+        We will make every effort to be open on snow days.
+        <br>
+        This form just helps us get a fuller picture of your child, so we ask that you please share any information that you feel is important on any of the following subjects.     <br>
+        safety for you and your children, we reserve the right to close for either the whole, or part of the day.
+        <br>
+        Please write clearly or type and use another sheet of paper if necessary
+        <br>
+        We will follow-up with a Parent/Teacher conference later in the school year.
+        <br>
+        Please fill one form out for each child.
+      </p>
+    </div>
+
+    <div class="form-group  mb-3 col-sm-6">
+      <label for="inputAddress">Date(required)</label>
+      <input formControlName="date" [ngClass]="{'is-invalid':submitted && submitForm.controls['date'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date">
+      <div *ngIf="submitted && submitForm.controls['date'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['date'].errors['required']" >
+          The date is required
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2>Child's Name (required)</h2>
+      <div class="col form-group">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName1'].errors }" type="text" class="form-control" placeholder="First name">
+
+        <div *ngIf="submitted && submitForm.controls['fName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName1'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+
+      </div>
+      <div class="col form-group">
+        <label for="inputAddress">Last Name</label>
+        <input formControlName="lName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName1'].errors }" type="text" class="form-control" placeholder="Last name">
+
+        <div *ngIf="submitted && submitForm.controls['lName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName1'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group mt-3 mb-3">
+        <label for="inputAddress">Child's Gender (required)</label>
+        <input formControlName="gender" [ngClass]="{'is-invalid':submitted && submitForm.controls['gender'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Gender">
+        <div *ngIf="submitted && submitForm.controls['gender'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['gender'].errors['required']" >
+            Gender is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group  mb-3 col-sm-6">
+        <label for="inputAddress">Child's Date of Birth (required)</label>
+        <input formControlName="childDOB" [ngClass]="{'is-invalid':submitted && submitForm.controls['childDOB'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date of birth">
+        <div *ngIf="submitted && submitForm.controls['childDOB'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['childDOB'].errors['required']" >
+            Date of Birth is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <h2>Name Of First Parent/Guardian</h2>
+      <div class="col">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName2" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName2'].errors }" type="text" class="form-control" placeholder="First name">
+        <div *ngIf="submitted && submitForm.controls['fName2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName2'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+      </div>
+      <div class="col mb-3">
+        <label for="inputAddress">Last Name</label>
+        <input  formControlName="lName2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName2'].errors }" type="text" class="form-control" placeholder="Last name">
+        <div *ngIf="submitted && submitForm.controls['lName2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName2'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <label for="inputAddress"><strong>Address Of First Parent/Gaurdian (required)</strong></label>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Country</label>
+        
+      <select formControlName="country1" [ngClass]="{'is-invalid':submitted && submitForm.controls['country1'].errors }"  type="text" class="form-control" name="country" id="country">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+     </select>
+
+
+        <div *ngIf="submitted && submitForm.controls['country1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['country1'].errors['required']" >
+           Country is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 1 (required)</label>
+        <input formControlName="ad1Line1" [ngClass]="{'is-invalid':submitted && submitForm.controls['ad1Line1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+        <div *ngIf="submitted && submitForm.controls['ad1Line1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['ad1Line1'].errors['required']" >
+            Address Line 1 is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 2</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 2">
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">City (required)</label>
+        <input formControlName="city1" [ngClass]="{'is-invalid':submitted && submitForm.controls['city1'].errors }" type="text" class="form-control" placeholder="City">
+        <div *ngIf="submitted && submitForm.controls['city1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['city1'].errors['required']" >
+            City is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">State (required)
+          </label>
+        <input formControlName="state1" [ngClass]="{'is-invalid':submitted && submitForm.controls['state1'].errors }" type="text" class="form-control" placeholder="State">
+        <div *ngIf="submitted && submitForm.controls['state1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['state1'].errors['required']" >
+            State is required
+          </div>
+        </div>
+      </div>
+      <div class="col mb-3">
+        <label for="inputAddress">ZIPCode(required)</label>
+        <input formControlName="zip1" [ngClass]="{'is-invalid':submitted && submitForm.controls['zip1'].errors }" type="text" class="form-control" placeholder="ZIP Code">
+        <div *ngIf="submitted && submitForm.controls['zip1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['zip1'].errors['required']" >
+            ZIP code is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Home Phone Of First Parent/Guardian</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Home Phone">
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Cell Phone Of First Parent/Guardian</label>
+        <input formControlName="cellPhone1" [ngClass]="{'is-invalid':submitted && submitForm.controls['cellPhone1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Cell Phone">
+        <div *ngIf="submitted && submitForm.controls['cellPhone1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['cellPhone1'].errors['required']" >
+            Cell Phone is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Email Of First Parent/Guardian:(required)</label>
+        <input formControlName="email1" [ngClass]="{'is-invalid':submitted && submitForm.controls['email1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Email">
+        <div *ngIf="submitted && submitForm.controls['email1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['email1'].errors['required']" >
+            Email is required
+          </div>
+          <div *ngIf="submitted && submitForm.controls['email1'].errors['email']">
+            Email is not valid
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Employer (required)</label>
+        <input formControlName="employer1" [ngClass]="{'is-invalid':submitted && submitForm.controls['employer2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Employer">
+        <div *ngIf="submitted && submitForm.controls['employer1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['employer1'].errors['required']" >
+            Employer is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Poisition (required)</label>
+        <input formControlName="position1" [ngClass]="{'is-invalid':submitted && submitForm.controls['position1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Position">
+        <div *ngIf="submitted && submitForm.controls['position1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['position1'].errors['required']" >
+            Position is required
+          </div>
+        </div>
+      </div>
+
+      <label for="inputAddress"><strong>Work Address (required)</strong></label>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Country</label>
+
+        <select formControlName="country2" [ngClass]="{'is-invalid':submitted && submitForm.controls['country2'].errors }"  type="text" class="form-control" name="country" id="country">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+     </select>
+
+
+        <div *ngIf="submitted && submitForm.controls['country2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['country2'].errors['required']" >
+            Country is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Addres Line 1 (required)</label>
+        <input formControlName="ad1Line2" [ngClass]="{'is-invalid':submitted && submitForm.controls['ad1Line2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+        <div *ngIf="submitted && submitForm.controls['ad1Line2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['ad1Line2'].errors['required']" >
+            Address LIne 1 is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 2</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 2">
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">City (required)</label>
+        <input formControlName="city2" [ngClass]="{'is-invalid':submitted && submitForm.controls['city2'].errors }" type="text" class="form-control" placeholder="City">
+        <div *ngIf="submitted && submitForm.controls['city2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['city2'].errors['required']" >
+            City is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">State (required)
+          </label>
+        <input formControlName="state2" [ngClass]="{'is-invalid':submitted && submitForm.controls['state2'].errors }" type="text" class="form-control" placeholder="State">
+        <div *ngIf="submitted && submitForm.controls['state2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['state2'].errors['required']" >
+            State is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="inputAddress">ZIPCode(required)</label>
+        <input formControlName="zip2" [ngClass]="{'is-invalid':submitted && submitForm.controls['zip2'].errors }" type="text" class="form-control" placeholder="ZIP Code">
+        <div *ngIf="submitted && submitForm.controls['zip2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['zip2'].errors['required']" >
+            ZIP Code is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Work Phone (required)</label>
+        <input formControlName="workPhone1" [ngClass]="{'is-invalid':submitted && submitForm.controls['workPhone1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Work Phone">
+        <div *ngIf="submitted && submitForm.controls['workPhone1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['workPhone1'].errors['required']" >
+            Work Phone is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group  mb-3 col-sm-6">
+        <label for="inputAddress">Birthday of Parent #1 (required)</label>
+        <input formControlName="P1DOB" [ngClass]="{'is-invalid':submitted && submitForm.controls['P1DOB'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date of birth">
+        <div *ngIf="submitted && submitForm.controls['P1DOB'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['P1DOB'].errors['required']" >
+            Birthday of Parent #1 (required)
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <h2><strong>Name Of Second Parent/Guardian:</strong></h2>
+      <div class="col">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName3" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName3'].errors }" type="text" class="form-control" placeholder="First name">
+        <div *ngIf="submitted && submitForm.controls['fName3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName3'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+      </div>
+      <div class="col mb-3">
+        <label for="inputAddress">Last Name</label>
+        <input  formControlName="lName3" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName3'].errors }" type="text" class="form-control" placeholder="Last name">
+        <div *ngIf="submitted && submitForm.controls['lName3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName3'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+      <label for="inputAddress"><strong>Address Of Second Parent/Guardian:</strong></label>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Country</label>
+
+        <select formControlName="country3" [ngClass]="{'is-invalid':submitted && submitForm.controls['country3'].errors }"  type="text" class="form-control" name="country" id="country">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+     </select>
+
+
+        <div *ngIf="submitted && submitForm.controls['country3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['country3'].errors['required']" >
+            Country is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 1 (required)</label>
+        <input formControlName="ad1Line3" [ngClass]="{'is-invalid':submitted && submitForm.controls['ad1Line3'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+        <div *ngIf="submitted && submitForm.controls['ad1Line3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['ad1Line3'].errors['required']" >
+            Address Line 1 is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 2</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 2">
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">City (required)</label>
+        <input formControlName="city3" [ngClass]="{'is-invalid':submitted && submitForm.controls['city3'].errors }" type="text" class="form-control" placeholder="City">
+        <div *ngIf="submitted && submitForm.controls['city3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['city3'].errors['required']" >
+            City is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">State (required)
+          </label>
+        <input formControlName="state3" [ngClass]="{'is-invalid':submitted && submitForm.controls['state3'].errors }" type="text" class="form-control" placeholder="State">
+        <div *ngIf="submitted && submitForm.controls['state3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['state3'].errors['required']" >
+            states required
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-3">
+        <label for="inputAddress">ZIPCode(required)</label>
+        <input formControlName="zip3" [ngClass]="{'is-invalid':submitted && submitForm.controls['zip3'].errors }" type="text" class="form-control" placeholder="ZIP Code">
+        <div *ngIf="submitted && submitForm.controls['zip3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['zip3'].errors['required']" >
+            ZIP code is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Home Phone Of Second Parent/Guardian:</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Home Phone">
+      </div>
+
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Cell Phone Of Second Parent/Guardian:</label>
+        <input formControlName="cellPhone2" [ngClass]="{'is-invalid':submitted && submitForm.controls['cellPhone2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Cell Phone">
+        <div *ngIf="submitted && submitForm.controls['cellPhone2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['cellPhone2'].errors['required']" >
+            Cell Phone is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Email Of Second Parent/Guardian:</label>
+        <input formControlName="email2" [ngClass]="{'is-invalid':submitted && submitForm.controls['email2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Email">
+        <div *ngIf="submitted && submitForm.controls['email2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['email2'].errors['required']" >
+            Email is required
+          </div>
+          <div *ngIf="submitted && submitForm.controls['email2'].errors['email']">
+            Email is not valid
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Employer (required)</label>
+        <input formControlName="employer2" [ngClass]="{'is-invalid':submitted && submitForm.controls['employer2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Employer">
+        <div *ngIf="submitted && submitForm.controls['employer2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['employer2'].errors['required']" >
+            Employer is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Position (required)</label>
+        <input formControlName="position2" [ngClass]="{'is-invalid':submitted && submitForm.controls['position2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Position">
+        <div *ngIf="submitted && submitForm.controls['position2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['position2'].errors['required']" >
+            Position is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Work Address (required)</label>
+        <p>Country</p>
+
+        <select formControlName="country4" [ngClass]="{'is-invalid':submitted && submitForm.controls['country4'].errors }"  type="text" class="form-control" name="country" id="country">
+          <option value="" disabled selected>Select Country</option>
+          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+     </select>
+
+        <div *ngIf="submitted && submitForm.controls['country4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['country4'].errors['required']" >
+            Country is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Addres Line 1 (required)</label>
+        <input formControlName="ad1Line4" [ngClass]="{'is-invalid':submitted && submitForm.controls['ad1Line4'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Address Line 1">
+        <div *ngIf="submitted && submitForm.controls['ad1Line4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['ad1Line4'].errors['required']" >
+            Address Line 1 is required
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Address Line 2</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 2">
+      </div>
+
+      <div class="col">
+        <label for="inputAddress">City (required)</label>
+        <input formControlName="city4" [ngClass]="{'is-invalid':submitted && submitForm.controls['city4'].errors }" type="text" class="form-control" placeholder="City">
+        <div *ngIf="submitted && submitForm.controls['city4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['city4'].errors['required']" >
+            City is required
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <label for="inputAddress">State (required)</label>
+        <input formControlName="state4" [ngClass]="{'is-invalid':submitted && submitForm.controls['state4'].errors }" type="text" class="form-control" placeholder="State">
+        <div *ngIf="submitted && submitForm.controls['state4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['state4'].errors['required']" >
+            State is required
+          </div>
+        </div>
+      </div>
+      <div class="col mb-3">
+        <label for="inputAddress">ZIPCode(required)</label>
+        <input formControlName="zip4" [ngClass]="{'is-invalid':submitted && submitForm.controls['zip4'].errors }" type="text" class="form-control" placeholder="ZIP Code">
+        <div *ngIf="submitted && submitForm.controls['zip4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['zip4'].errors['required']" >
+            ZIP Code is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Work Phone (required)</label>
+        <input formControlName="workPhone2" [ngClass]="{'is-invalid':submitted && submitForm.controls['workPhone2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="Work Phone">
+        <div *ngIf="submitted && submitForm.controls['workPhone2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['workPhone2'].errors['required']" >
+            Work Phone is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group  mb-3 col-sm-6">
+        <label for="inputAddress">Birthday of Parent #2 (required)</label>
+        <input formControlName="P2DOB" [ngClass]="{'is-invalid':submitted && submitForm.controls['P2DOB'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date of birth">
+        <div *ngIf="submitted && submitForm.controls['P2DOB'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['P2DOB'].errors['required']" >
+            Birthday of Parent #2 (required)
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Name, Ages, and Birthdays of Siblings(required)</label>
+        <textarea formControlName="outside1" [ngClass]="{'is-invalid':submitted && submitForm.controls['outside1'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50">
+
+
+        </textarea>
+        <div *ngIf="submitted && submitForm.controls['outside1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['outside1'].errors['required']" >
+            Name, Ages, and Birthdays of Siblings (required)              </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Other People Living At Home With Your Child (required)</label>
+        <textarea  formControlName="watch1" [ngClass]="{'is-invalid':submitted && submitForm.controls['watch1'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+        <div *ngIf="submitted && submitForm.controls['watch1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['watch1'].errors['required']" >
+            Other People Living At Home With Your Child (required)              </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Languages Spoken At Home (required)</label>
+        <input  formControlName="special1" [ngClass]="{'is-invalid':submitted && submitForm.controls['special1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['special1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['special1'].errors['required']" >
+            Languages Spoken At Home (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Pets and Their Names (required)</label>
+        <input formControlName="med1" [ngClass]="{'is-invalid':submitted && submitForm.controls['med1'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['med1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['med1'].errors['required']" >
+            Pets and Their Names (required)
+          </div>
+        </div>
+      </div>
+
+
+      <!-- begin textarea -->
+      <div class="form-group mb-3">
+        <label for="inputAddress">What were your child’s birth circumstances? (home or hospital, length of labor, breech, premature, etc.)? Would you describe your child’s labor and birth time as easy or more challenging? Apgar score? Please describe. (required)</label>
+        <textarea  formControlName="evaluations1" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations1'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <div *ngIf="submitted && submitForm.controls['evaluations1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['evaluations1'].errors['required']" >
+            What were your child’s birth circumstances? (home or hospital, length of labor, breech, premature, etc.)? Would you describe your child’s labor and birth time as easy or more challenging? Apgar score? Please describe. (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Are there any congenital conditions?(required)</label>
+        <textarea  formControlName="allergy1" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy1'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <div *ngIf="submitted && submitForm.controls['allergy1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['allergy1'].errors['required']" >
+            Are there any congenital conditions? (required)
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding hearing.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding speech.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding eyesight.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding coordination/movement.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+       </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding persistent fears.</label>
+          <p>If yes, please describe and attach copies of the report</p>
+          <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding learning difficulties,</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding feeding difficulties.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding sleep difficulties.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please explain any unusual or pertinent information regarding digestive difficulties.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+       </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Does your child have any on-going medical condition? Take any medication regarding this?</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Has your child ever had a seizure of any kind? Please describe and give dates and comments.</label>
+          <p>If yes, please describe and attach copies of the report</p>
+          <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Describe any accidents, serious illness or operations, with dates.</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Have there been any severe illnesses or deaths involving people or pets close to your child?</label>
+        <textarea type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+      </div>
+
+      <!-- end of textarea -->
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">What are their favorite foods? (required)</label>
+        <input formControlName="watch2" [ngClass]="{'is-invalid':submitted && submitForm.controls['watch2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['watch2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['watch2'].errors['required']" >
+            What are their favorite foods? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Is your family vegetarian, vegan, kosher, and/or gluten free? (required)</label>
+        <input  formControlName="special2" [ngClass]="{'is-invalid':submitted && submitForm.controls['special2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['special2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['special2'].errors['required']" >
+            Is your family vegetarian, vegan, kosher, and/or gluten free? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Any medically diagnosed food allergies? I NEED A DOCTORS NOTE, ON RECORD, SPECIFYING THE ALLERGY AND THE REPLACEMENT FOOD. PLEASE SUPPLY AN EPI PEN IF WARENTED (required)</label>
+        <input formControlName="med2" [ngClass]="{'is-invalid':submitted && submitForm.controls['med2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['med2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['med2'].errors['required']" >
+            Any medically diagnosed food allergies? I NEED A DOCTORS NOTE, ON RECORD, SPECIFYING THE ALLERGY AND THE REPLACEMENT FOOD. PLEASE SUPPLY AN EPI PEN IF WARENTED (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">May we serve: eggs, yogurt, cheese, tuna, cow’s milk, coconut milk, almond milk, herbal tea, chicken, and/or chicken broth? (required)</label>
+          <p>If yes, please describe and attach copies of the report</p>
+        <input formControlName="evaluations2" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['evaluations2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['evaluations2'].errors['required']" >
+            May we serve: eggs, yogurt, cheese, tuna, cow’s milk, coconut milk, almond milk, herbal tea, chicken, and/or chicken broth? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Has your child had any nut butters yet? Peanut? Almond or sunflower? May we serve them? (required)</label>
+        <input formControlName="allergy2" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['allergy2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['allergy2'].errors['required']" >
+            Has your child had any nut butters yet? Peanut? Almond or sunflower? May we serve them? (required)
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Breakfast: What is a typical breakfast before school? What time does your child eat this meal? (required)</label>
+        <input formControlName="outside2" [ngClass]="{'is-invalid':submitted && submitForm.controls['outside2'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['outside2'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['outside2'].errors['required']" >
+            Breakfast: What is a typical breakfast before school? What time does your child eat this meal? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Lunch: What is a typical lunch? (required)</label>
+        <input formControlName="watch3" [ngClass]="{'is-invalid':submitted && submitForm.controls['watch3'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+        <div *ngIf="submitted && submitForm.controls['watch3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['watch3'].errors['required']" >
+            Lunch: What is a typical lunch? (required)
+          </div>
+        </div>
+      </div>
+
+      <!-- begin textarea -->
+      <div class="form-group mb-3">
+        <label for="inputAddress">Dinner: What time is dinner? Is it always the same time? Is everyone there for dinner (or do children eat separately, or does one family member often have to miss the meal)? What type of meal is eaten (light, substantial, vegetarian, meat, fish, etc.)? (required)</label>
+        <textarea  formControlName="special3" [ngClass]="{'is-invalid':submitted && submitForm.controls['special3'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <div *ngIf="submitted && submitForm.controls['special3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['special3'].errors['required']" >
+            Dinner: What time is dinner? Is it always the same time? Is everyone there for dinner (or do children eat separately, or does one family member often have to miss the meal)? What type of meal is eaten (light, substantial, vegetarian, meat, fish, etc.)? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Nursing: Are you still nursing? How often? Does your child have a favorite time to nurse? Does he or she fall asleep nursing? Does your child have a bottle at any time during the day or night? Or a pacifier? (required)</label>
+        <textarea  formControlName="med3" [ngClass]="{'is-invalid':submitted && submitForm.controls['med3'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="med3" [ngClass]="{'is-invalid':submitted && submitForm.controls['med3'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['med3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['med3'].errors['required']" >
+            Nursing: Are you still nursing? How often? Does your child have a favorite time to nurse? Does he or she fall asleep nursing? Does your child have a bottle at any time during the day or night? Or a pacifier? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Sleep Habits: Napping schedule? Any lovey, pacifier, etc. Does your child sleep in a crib or a bed? (required)</label>
+          <p>If yes, please describe and attach copies of the report</p>
+          <textarea  formControlName="evaluations3" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations3'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="evaluations3" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations3'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['evaluations3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['evaluations3'].errors['required']" >
+            Sleep Habits: Napping schedule? Any lovey, pacifier, etc. Does your child sleep in a crib or a bed? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Do you have a bedtime ritual? What time does your child go to bed at night? Fall asleep? Wake up in the a.m.? (required)</label>
+        <textarea  formControlName="allergy3" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy3'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="allergy3" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy3'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['allergy3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['allergy3'].errors['required']" >
+            Do you have a bedtime ritual? What time does your child go to bed at night? Fall asleep? Wake up in the a.m.? (required)
+          </div>
+        </div>
+      </div>
+      <!-- end of textarea -->
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Is she or he alone in room? In a shared room? Your room? Family bed? (required)</label>
+        <textarea  formControlName="outside3" [ngClass]="{'is-invalid':submitted && submitForm.controls['outside3'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="outside3" [ngClass]="{'is-invalid':submitted && submitForm.controls['outside3'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['outside3'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['outside3'].errors['required']" >
+            Is she or he alone in room? In a shared room? Your room? Family bed? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Is your child’s sleep typically unbroken? (required)</label>
+        <textarea  formControlName="watch4" [ngClass]="{'is-invalid':submitted && submitForm.controls['watch4'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="watch4" [ngClass]="{'is-invalid':submitted && submitForm.controls['watch4'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['watch4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['watch4'].errors['required']" >
+            Is your child’s sleep typically unbroken? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Do you have any concerns or issues about your child’s bedtime and naptime? (required)</label>
+        <textarea  formControlName="special4" [ngClass]="{'is-invalid':submitted && submitForm.controls['special4'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input  formControlName="special4" [ngClass]="{'is-invalid':submitted && submitForm.controls['special4'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['special4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['special4'].errors['required']" >
+            Do you have any concerns or issues about your child’s bedtime and naptime? (required)
+          </div>
+        </div>
+      </div>
+      <!-- begin textarea -->
+      <div class="form-group mb-3">
+        <label for="inputAddress">Discipline: How do you manage behavior/set boundaries at home? (required)</label>
+        <textarea  formControlName="med4" [ngClass]="{'is-invalid':submitted && submitForm.controls['med4'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="med4" [ngClass]="{'is-invalid':submitted && submitForm.controls['med4'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['med4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['med4'].errors['required']" >
+            Discipline: How do you manage behavior/set boundaries at home? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Special Needs: Any special movement related, physical, emotional, or medical needs that we should be aware of? (required)</label>
+          <p>If yes, please describe and attach copies of the report</p>
+          <textarea  formControlName="evaluations4" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations4'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="evaluations4" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations4'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['evaluations4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['evaluations4'].errors['required']" >
+            Special Needs: Any special movement related, physical, emotional, or medical needs that we should be aware of? (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Festivals/Holidays: We would love to know what and how you celebrate at home? (required)</label>
+        <textarea  formControlName="allergy4" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy4'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="allergy4" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy4'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['allergy4'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['allergy4'].errors['required']" >
+            Festivals/Holidays: We would love to know what and how you celebrate at home? (required)
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="inputAddress">Birthdays - We would love to know when your (the parents’) birthdays are? And Grandparents--especially if they are part of your family’s daily life. (required)</label>
+          <p>If yes, please describe and attach copies of the report</p>
+          <textarea  formControlName="evaluations5" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations5'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="evaluations5" [ngClass]="{'is-invalid':submitted && submitForm.controls['evaluations5'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['evaluations5'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['evaluations5'].errors['required']" >
+            Birthdays - We would love to know when your (the parents’) birthdays are? And Grandparents--especially if they are part of your family’s daily life. (required)
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputAddress">Please add anything you think is important to share with us about your child. (required)</label>
+        <textarea  formControlName="allergy5" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy5'].errors }" type="text" class="form-control" name="" id="" rows="4" cols="50"></textarea>
+
+        <!-- <input formControlName="allergy5" [ngClass]="{'is-invalid':submitted && submitForm.controls['allergy5'].errors }" type="text" class="form-control" id="inputAddress" placeholder=""> -->
+        <div *ngIf="submitted && submitForm.controls['allergy5'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['allergy5'].errors['required']" >
+            Please add anything you think is important to share with us about your child. (required)
+          </div>
+        </div>
+      </div>
+
+      <!-- end of textarea -->
+
+    </div>
+
+    <div class="form-group col-lg-12  mb-3">
+      <button class="submitbtn ">Submit</button>
+    </div>
+  </form>
+
+</div>
+

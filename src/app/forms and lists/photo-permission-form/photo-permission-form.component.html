@@ -1,0 +1,144 @@
+<!-- <p>photo-permission-form works!</p> -->
+
+<div class="container heading mt-5 mb-3 text-center">
+  <h1>Photo Permission</h1>
+  <span class="btn mb-3">
+    <a href ="https://static1.squarespace.com/static/6311339d4ad10577507f3166/t/6358a5234701ad74b050a46b/1666753833310/6Photo+Permission.docx.pdf" attributes-list target="_blank">Download the PDF version here!<i class="bi bi-arrow-right"></i></a>
+  </span>
+</div>
+
+<div class="container mb-5">
+  <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form" >
+
+    <div class="row mb-3">
+      <h2>Child's Name (required)</h2>
+      <div class="col form-group">
+        <label for="inputAddress">First Name</label>
+        <input formControlName="fName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['fName1'].errors }" type="text" class="form-control" placeholder="First name">
+
+        <div *ngIf="submitted && submitForm.controls['fName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['fName1'].errors['required']" >
+            First Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col form-group">
+        <label for="inputAddress">Last Name</label>
+        <input formControlName="lName1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lName1'].errors }" type="text" class="form-control" placeholder="Last name">
+
+        <div *ngIf="submitted && submitForm.controls['lName1'].errors" class="text-danger">
+          <div *ngIf="submitted && submitForm.controls['lName1'].errors['required']" >
+            Last Name is required
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group  mb-3 col-sm-6">
+      <label for="inputAddress">Date(required)</label>
+      <input formControlName="date" [ngClass]="{'is-invalid':submitted && submitForm.controls['date'].errors }" type="date" class="form-control" id="inputAddress" placeholder="Date">
+      <div *ngIf="submitted && submitForm.controls['date'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['date'].errors['required']" >
+          The date is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+
+      <!-- <h2>Child Lives With... (required)</h2> -->
+      <p>PERMISSION TO PHOTOGRAPH (required)</p>
+      <p>Please check off the correct option.</p>
+
+      <div *ngIf="submitted && submitForm.controls['lives1'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['lives1'].errors['required']" >
+          PERMISSION TO PHOTOGRAPH is required.
+        </div>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives1'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">I give The Cottage Garden permission to use photographs of my child/children to share with CG families in an online album and our Facebook page; for publicity purposes in brochures, and ads in local newspapers; and on the website, Facebook, Instagram, the Blog, cards or flyers to promote The Cottage Garden Program.</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives1" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives1'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">I do not give The Cottage Garden permission to use photographs of my child/children to share with CG families in an online album and our Facebook page; for publicity purposes in brochures, and ads in local newspapers; and on the website, Facebook, Instagram, the Blog, cards or flyers to promote The Cottage Garden Program.</label>
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+
+      <p>PERMISSION TO GO ON WALKS (required)</p>
+      <p>(this means for Fire drills and to the neighbors to see the chickens)</p>
+
+      <div *ngIf="submitted && submitForm.controls['lives2'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['lives2'].errors['required']" >
+          PERMISSION TO GO ON WALKS is required.
+        </div>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">I give The Cottage Garden permission to take walks off the property with my child/children.</label>
+      </div>
+
+      <div class="form-check">
+        <input formControlName="lives2" [ngClass]="{'is-invalid':submitted && submitForm.controls['lives2'].errors }" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+        <label class="form-check-label" for="flexCheckChecked">I do not give The Cottage Garden permission to take walks off the property with my child/children.</label>
+      </div>
+
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="inputAddress">Parent 1 Signature: (required)</label>
+      <!-- <p>Parent 1 Signature: (required)</p> -->
+      <input formControlName="p1sign" [ngClass]="{'is-invalid':submitted && submitForm.controls['p1sign'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['p1sign'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p1sign'].errors['required']" >
+          Parent 1 Signature: (required)              </div>
+      </div>
+    </div>
+    <div class="form-group mb-3 col-sm-4">
+      <label for="inputAddress">Date (required)</label>
+      <!-- <p>Date (required)</p> -->
+      <input formControlName="p1Date" [ngClass]="{'is-invalid':submitted && submitForm.controls['p1Date'].errors }"  type="date" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['p1Date'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p1Date'].errors['required']" >
+          Date (required)              </div>
+      </div>
+    </div>
+    <div class="form-group mb-3">
+      <label for="inputAddress">Parent 2 Signature: (required)</label>
+      <!-- <p>Parent 2 Signature: (required)</p> -->
+      <input formControlName="p2sign" [ngClass]="{'is-invalid':submitted && submitForm.controls['p2sign'].errors }" type="text" class="form-control" id="inputAddress" placeholder="">
+      <div *ngIf="submitted && submitForm.controls['p2sign'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p2sign'].errors['required']" >
+          Parent 2 Signature: (required)              </div>
+      </div>
+    </div>
+    <div class="form-group mb-3 col-sm-4">
+      <label for="inputAddress">Date (required)</label>
+      <!-- <p>Date (required)</p> -->
+      <input formControlName="p2Date" [ngClass]="{'is-invalid':submitted && submitForm.controls['p2Date'].errors }"  type="date" class="form-control" id="inputAddress" placeholder="" >
+      <div *ngIf="submitted && submitForm.controls['p2Date'].errors" class="text-danger">
+        <div *ngIf="submitted && submitForm.controls['p2Date'].errors['required']" >
+          Date (required)              </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="inputAddress">Is There A Message You Would Like To Leave For Us?</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="">
+    </div>
+
+    <div class="form-group col-lg-12  mb-3">
+      <button class="submitbtn ">Submit</button>
+    </div>
+
+  </form>
+
+</div>

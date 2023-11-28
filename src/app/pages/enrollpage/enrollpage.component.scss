@@ -1,0 +1,106 @@
+.content .intro  h1{
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.learnbtn
+{
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.learnbtn:hover
+{
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.btn
+{
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn:hover
+{
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+// .content a
+// {
+//   text-decoration: none;
+//   background-color: #fff;
+//   color: var(--primary-color);
+//   padding: 15px 20px;
+//   border-radius: 5px;
+// }
+
+// .content a:hover
+// {
+//   background-color: var(--primary-color);
+//   color: #fff;
+// }
+
+
+.main-form
+{
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.paybtn
+{
+  background-color: rgb(236, 203, 12);
+
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: none;
+
+}
+
+.paybtn:hover
+{
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+
+.firstName{
+  margin-right: 15px;
+  width: 250px;
+}
+
+.lastName{
+  width: 250px;
+}
+
+.form{
+  width: 100%;
+}
+
+.password{
+  margin-right: 15px;
+  width: 250px;
+}
+
+.confirmPassword{
+  width: 250px;
+}
+
+.dateHint{
+  color: #F29F05;
+}
+
+.selectGender{
+  color: #F29F05;
+}
+
+.next{
+  background-color: #267365;
+}

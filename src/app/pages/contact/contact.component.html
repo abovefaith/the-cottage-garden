@@ -1,0 +1,126 @@
+<!-- <p>contact works!</p> -->
+
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-sm">
+      <div class="container mt-3 mb-3">
+        <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form col-lg-8">
+          <div class="row">
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <h1>Contact Us</h1>
+              <label for="inputAddress">Child's Name (required)</label>
+              <input  formControlName="childsName" [ngClass]="{'is-invalid':submitted && submitForm.controls['childsName'].errors }" type="text" class="form-control" placeholder="Enter Child's Name*" >
+
+              <div *ngIf="submitted && submitForm.controls['childsName'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['childsName'].errors['required']" >
+                  Child's Name is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Child's Date of Birth (required)</label>
+              <input  formControlName="childsDOB" [ngClass]="{'is-invalid':submitted && submitForm.controls['childsDOB'].errors }" type="date" class="form-control" placeholder="Enter Child's Date of Birth*" >
+
+              <div *ngIf="submitted && submitForm.controls['childsDOB'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['childsDOB'].errors['required']" >
+                  Child's Date of Birth is required
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <h2>Your Name (required)</h2>
+              <label for="inputAddress">First Name</label>
+              <input  formControlName="firstName" [ngClass]="{'is-invalid':submitted && submitForm.controls['firstName'].errors }" type="text" class="form-control" placeholder="First name">
+
+              <div *ngIf="submitted && submitForm.controls['firstName'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['firstName'].errors['required']" >
+                  First Name is required
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Last Name</label>
+              <input  formControlName="lastName" [ngClass]="{'is-invalid':submitted && submitForm.controls['lastName'].errors }" type="text" class="form-control" placeholder="Last name">
+
+              <div *ngIf="submitted && submitForm.controls['lastName'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['lastName'].errors['required']" >
+                  Last Name is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Your Email (required)</label>
+              <input  formControlName="email" [ngClass]="{'is-invalid':submitted && submitForm.controls['email'].errors }" type="text" class="form-control" placeholder="Enter Email ID*" >
+
+              <div *ngIf="submitted && submitForm.controls['email'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['email'].errors['required']" >
+                  Your Email is required
+                </div>
+                <div *ngIf="submitted && submitForm.controls['email'].errors['email']">
+                  Email is not valid
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Phone (Optional)</label>
+              <input type="text" class="form-control" placeholder="Enter Phone Number" >
+            </div>
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Subject (Optional)</label>
+              <input type="text" class="form-control" placeholder="Enter the Subject" >
+            </div>
+
+            <div class="form-group col-lg-12 mt-2 mb-2">
+              <label for="inputAddress">Your Message (required)</label>
+              <input  formControlName="message" [ngClass]="{'is-invalid':submitted && submitForm.controls['message'].errors }" type="text" class="form-control" placeholder="Enter Your Message" >
+
+              <div *ngIf="submitted && submitForm.controls['message'].errors" class="text-danger">
+                <div *ngIf="submitted && submitForm.controls['message'].errors['required']" >
+                  Your Message is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12  mb-3">
+              <button class="btn btn-md">Submit</button>
+
+          </div>
+          </div>
+
+         
+        </form>
+      </div>
+
+    </div>
+
+    <div class="col-sm">
+      <div class="container mt-3 mb-3">
+        <h2>The Cottage Garden is just a few minutes from UMASS campus and downtown Amherst. It is easy to walk into town! We are located at the end of a quiet street. Little to no street traffic goes past our Cottage Garden house. It is a quiet and safe location for small children.135 Cottage Street, Amherst MA 01002</h2>
+        <h3><i class="bi bi-geo-alt-fill"></i> Our Location:</h3>
+        <p>
+          The Cottage Garden
+          <br>
+          Celia Riahi Cottage Street
+          <br>
+          Amherst, MA 01002 413.348.6035
+        </p>
+
+        <div class="google-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.004250598307!2d-72.51818562477516!3d42.38505593352321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6cd8b9327189f%3A0x409f9a6f0eeefa14!2sThe%20Cottage%20Garden!5e0!3m2!1sen!2ske!4v1698237012665!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
