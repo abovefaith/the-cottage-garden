@@ -7,7 +7,7 @@
         <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" class="main-form col-lg-8">
           <div class="row">
 
-            <div class="form-group col-lg-12 mt-2 mb-2">
+            <div class="form-group content col-lg-12 mt-2 mb-2">
               <h1>Contact Us</h1>
               <label for="inputAddress">Child's Name (required)</label>
               <input  formControlName="childsName" [ngClass]="{'is-invalid':submitted && submitForm.controls['childsName'].errors }" type="text" class="form-control" placeholder="Enter Child's Name*" >
